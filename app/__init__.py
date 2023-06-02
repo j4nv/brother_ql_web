@@ -100,6 +100,10 @@ def get_label_context(request):
         'line_spacing':      int(d.get('line_spacing', 100)),
         'cut_mode':          d.get('cut_mode', 'cut'),
     }
+    if not context['font_family']:
+        context['font_family'] = None
+    if not context['font_style']:
+        context['font_style'] = None
     context['margin_top']    = int(context['font_size']*context['margin_top'])
     context['margin_bottom'] = int(context['font_size']*context['margin_bottom'])
     context['margin_left']   = int(context['font_size']*context['margin_left'])
